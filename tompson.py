@@ -53,7 +53,12 @@ while P:
         if Q_d_name and Q_d_name not in Q:
             P.append(Q_d)
             Q.add(Q_d_name)
-            g.node(Q_d_name)
+            shape = "circle"
+            for node in graph.get_node_list():
+                if node.get_name() in Q_d_name and node.get_attributes().get('shape') == "doublecircle":
+                    shape = "doublecircle"
+                    break
+            g.node(Q_d_name, shape=shape)
 
 for edge in Edges:
     g.edge(edge.get_source(), edge.get_destination(), edge.get_attributes().get('label'))
