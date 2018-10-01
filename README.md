@@ -12,3 +12,4 @@
 # Зависимости
     sudo apt-get install graphviz
     pip install graphviz
+    pip install pydot
